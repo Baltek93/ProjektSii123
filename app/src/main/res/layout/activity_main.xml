@@ -17,14 +17,17 @@
         android:background="@mipmap/menutlo" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="90dp"
+        android:layout_height="200dp"
         android:id="@+id/ivPomocnik"
         android:layout_alignBottom="@+id/ivTloMain"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:background="@mipmap/pomocnik"
-        android:layout_alignParentStart="false" />
+        android:layout_alignParentStart="false"
+        android:maxHeight="100dp"
+        android:maxWidth="50dp"
+        android:scaleType="fitXY" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -33,28 +36,35 @@
         android:background="@mipmap/zegar"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="450dp"
-        android:layout_alignTop="@+id/ivTloMain" />
+        android:layout_alignTop="@+id/ivTloMain"
+        android:maxHeight="50dp"
+        android:maxWidth="50dp"
+        android:scaleType="fitXY" />
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
         android:id="@+id/ibKlocki"
         android:background="@mipmap/klocki"
 
         android:layout_alignBottom="@+id/ivTloMain"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignLeft="@+id/ivTloMain" />
+        android:layout_alignLeft="@+id/ivTloMain"
+        android:scaleType="fitXY"
+        android:maxHeight="40dp"
+        android:maxWidth="100dp" />
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="60dp"
         android:id="@+id/ibGarnek"
         android:background="@mipmap/garnek"
         android:layout_marginLeft="230dp"
         android:onClick="GraGarnki"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="65dp"
         android:maxWidth="50dp"
-        android:maxHeight="120dp" />
+        android:maxHeight="60dp"
+        android:scaleType="fitXY" />
 
 </RelativeLayout>
