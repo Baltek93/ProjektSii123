@@ -27,6 +27,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public void GraZegar(View v)
+    {
+        Intent intent = new Intent(this, ZegarActivity.class);
+        startActivity(intent);
+
+
+    }
+
     }
 //Krystian commit
 
