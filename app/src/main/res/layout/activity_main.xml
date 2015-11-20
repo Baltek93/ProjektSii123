@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.bartosz.sii.MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ivTloMain"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="@mipmap/menutlo" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivPomocnik"
+        android:layout_alignBottom="@+id/ivTloMain"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@mipmap/pomocnik"
+        android:layout_alignParentStart="false" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ibZegar"
+        android:background="@mipmap/zegar"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="450dp"
+        android:layout_alignTop="@+id/ivTloMain" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ibKlocki"
+        android:background="@mipmap/klocki"
+
+        android:layout_alignBottom="@+id/ivTloMain"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignLeft="@+id/ivTloMain" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ibGarnek"
+        android:background="@mipmap/garnek"
+        android:layout_marginLeft="230dp"
+        android:onClick="GraGarnki"
+        android:layout_marginTop="90dp"
+        android:maxWidth="50dp"
+        android:maxHeight="120dp" />
+
+</RelativeLayout>
