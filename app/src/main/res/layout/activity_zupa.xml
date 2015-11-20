@@ -40,4 +40,21 @@
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/imageViewGroszek"
         android:layout_toEndOf="@+id/imageViewGroszek" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView_zupa_garnek"
+        android:src="@mipmap/zupa_garnek"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView_zupa_cebula"
+        android:src="@mipmap/zupa_cebula"
+        android:layout_alignTop="@+id/imageViewGroszek"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
