@@ -39,6 +39,7 @@ public class ZupaActivity extends Activity implements View.OnTouchListener {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_zupa);
         Muzyka.play(this, R.raw.zupa_intro);
+
         displaymetrics= new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
         width= displaymetrics.widthPixels;
@@ -119,13 +120,11 @@ for (Warzywa x:warzywa)
 
 
             warzywa.get(i).getObrazek().setX(i * height/4 + 100);
-            warzywa.get(i).getObrazek().setY(width/4);
+            warzywa.get(i).getObrazek().setY(width / 4);
             warzywa.get(i).getObrazek().setMaxHeight(150);
             warzywa.get(i).getObrazek().setMaxWidth(150);
-            Log.d("Dgddfg", "Cracovia");
             warzywo= random.nextInt(warzywa.size());
-            Log.d("FDSSg", String.valueOf(warzywo));
-
+            Muzyka.play(this, warzywa.get(warzywo).muzyka);
             warzywa.get(warzywo).getObrazek().setOnTouchListener(this);
 
         }
