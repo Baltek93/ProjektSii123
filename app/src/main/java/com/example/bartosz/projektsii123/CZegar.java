@@ -9,6 +9,24 @@ public class CZegar {
     private int minuta=1;
     private int godzinaZapytana=1;
     private int minutaZapytana=1;
+    private int checker = 0 ;
+    private int iloscPrzejsc = 0;
+
+    public int getIloscPrzejsc() {
+        return iloscPrzejsc;
+    }
+
+    public void setIloscPrzejsc(int iloscPrzejsc) {
+        this.iloscPrzejsc = iloscPrzejsc;
+    }
+
+    public int getChecker() {
+        return checker;
+    }
+
+    public void setChecker(int checker) {
+        this.checker = checker;
+    }
 
     public int getGodzinaZapytana() {
         return godzinaZapytana;

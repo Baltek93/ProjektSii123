@@ -23,7 +23,6 @@
         android:layout_alignParentEnd="true"
         android:background="@mipmap/pomocnik"
         android:layout_toRightOf="@+id/tpZegar"
-        android:layout_toEndOf="@+id/tpZegar"
         android:layout_alignBottom="@+id/tpZegar"
         android:layout_alignParentTop="true" />
 
