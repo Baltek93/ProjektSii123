@@ -16,7 +16,6 @@ import java.util.Random;
 
 public class WybieranieActivity extends Activity {
     private int currNum, currLosNum, wybImg, wynik;
-
     //tablica poprawnych odpowiedzi dla poszczególnych plansz
     private int[] ktoryWlasciwy = {
             R.mipmap.z1_trojkat,
@@ -105,7 +104,7 @@ public class WybieranieActivity extends Activity {
         }
 
         //koniec gry, sukces
-        if (wynik == 10) {
+        if (wynik == ktoryWlasciwy.length) {
 
             //kod powrotu do głównej aktywności
             //jest opóźnienie 2s

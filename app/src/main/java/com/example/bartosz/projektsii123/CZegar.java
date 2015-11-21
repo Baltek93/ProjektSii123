@@ -12,6 +12,15 @@ public class CZegar {
     private int checker = 0 ;
     private int iloscPrzejsc = 0;
     private int dzwiekZegar = 0;
+    private int pierwszyRaz = 0 ;
+
+    public int getPierwszyRaz() {
+        return pierwszyRaz;
+    }
+
+    public void setPierwszyRaz(int pierwszyRaz) {
+        this.pierwszyRaz = pierwszyRaz;
+    }
 
     public int getDzwiekZegar() {
         return dzwiekZegar;

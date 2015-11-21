@@ -29,7 +29,7 @@ public class ZegarActivity extends Activity {
         TimePicker tpHourMin = (TimePicker) findViewById(R.id.tpZegar);
         tpHourMin.setIs24HourView(true);
             setTimeAsHeSays();
-
+        cZegar.setPierwszyRaz(1);
             imageButton = (ImageButton) findViewById(R.id.ibPomocnikZegar);
 
     imageButton.setOnClickListener(new View.OnClickListener() {
