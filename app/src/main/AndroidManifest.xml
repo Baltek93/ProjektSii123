@@ -26,7 +26,8 @@
             android:name=".WybieranieActivity"
             android:screenOrientation="landscape" >
         </activity>
-        <activity android:name=".splashActivity" >
+        <activity android:name=".splashActivity"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

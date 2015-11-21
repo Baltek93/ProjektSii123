@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 
@@ -20,14 +22,14 @@ import java.util.Random;
 public class ZupaActivity extends Activity implements View.OnTouchListener {
     ArrayList<Warzywa> warzywa;
     Random random;
-    ImageView garnek;
+    ImageView garnek,smok;
     int tura;
     float garnekx,garneky;
     float x, y ;
     boolean moving;
     int warzywo;
     DisplayMetrics displaymetrics ;
-
+    Animation anim;
     int height ;
     int width ;
 
@@ -39,7 +41,9 @@ public class ZupaActivity extends Activity implements View.OnTouchListener {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_zupa);
         Muzyka.play(this, R.raw.zupa_intro);
-
+        smok=(ImageView)findViewById(R.id.Pomocnik123);
+        anim= AnimationUtils.loadAnimation(this, R.anim.animate);
+        smok.startAnimation(anim);
         displaymetrics= new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
         width= displaymetrics.widthPixels;
@@ -124,7 +128,9 @@ for (Warzywa x:warzywa)
             warzywa.get(i).getObrazek().setMaxHeight(150);
             warzywa.get(i).getObrazek().setMaxWidth(150);
             warzywo= random.nextInt(warzywa.size());
+
             Muzyka.play(this, warzywa.get(warzywo).muzyka);
+
             warzywa.get(warzywo).getObrazek().setOnTouchListener(this);
 
         }

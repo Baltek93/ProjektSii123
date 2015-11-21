@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +18,10 @@ import java.util.Random;
 
 public class WybieranieActivity extends Activity {
     private int currNum, currLosNum, wybImg, wynik;
+
+    ImageView smok;
+    Animation animation;
+
     //tablica poprawnych odpowiedzi dla poszczególnych plansz
     private int[] ktoryWlasciwy = {
             R.mipmap.z1_trojkat,
@@ -49,6 +55,11 @@ public class WybieranieActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_wybieranie);
+
+        smok=(ImageView)findViewById(R.id.ivPomocnik);
+        animation= AnimationUtils.loadAnimation(this, R.anim.animate);
+        smok.startAnimation(animation);
+
         Muzyka.play(this, R.raw.wybieranie_intro);
         // głupi komentarz
         //zmienne typu ImageView

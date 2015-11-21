@@ -8,7 +8,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -19,6 +22,9 @@ public class ZegarActivity extends Activity {
 
     TimePicker tp;
 
+    ImageButton smok;
+    Animation animation;
+
     ImageButton imageButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +32,11 @@ public class ZegarActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_zegar);
+
+        smok=(ImageButton)findViewById(R.id.ibPomocnikZegar);
+        animation= AnimationUtils.loadAnimation(this, R.anim.animate);
+        smok.startAnimation(animation);
+
         TimePicker tpHourMin = (TimePicker) findViewById(R.id.tpZegar);
         tpHourMin.setIs24HourView(true);
             setTimeAsHeSays();
