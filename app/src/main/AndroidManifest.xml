@@ -28,10 +28,6 @@
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name=".PorzadekActivity"
-            android:screenOrientation="landscape" >
-        </activity>
-        <activity
             android:name=".WybieranieActivity"
             android:screenOrientation="landscape" >
         </activity>

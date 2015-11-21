@@ -1,24 +1,28 @@
 package com.example.bartosz.projektsii123;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.Random;
 
-public class ZegarActivity extends AppCompatActivity {
+public class ZegarActivity extends Activity {
     CZegar cZegar = new CZegar();
     TimePicker tp;
     ImageButton imageButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_zegar);
 
             setTimeAsHeSays();
