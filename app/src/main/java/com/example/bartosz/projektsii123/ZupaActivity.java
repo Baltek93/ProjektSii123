@@ -17,6 +17,7 @@ public class ZupaActivity extends Activity implements View.OnTouchListener {
     ArrayList<Warzywa> warzywa;
     Random random;
     ImageView garnek;
+    int tura;
     float garnekx,garneky;
     float x, y ;
     boolean moving;
@@ -39,9 +40,17 @@ garnek= (ImageView)findViewById(R.id.imageView_zupa_garnek);
         warzywa.get(1).setObrazek((ImageView) findViewById(R.id.imageView_zupa_cebula));
         warzywa.get(2).setObrazek((ImageView) findViewById(R.id.imageViewMarchewka));
         warzywa.get(3).setObrazek((ImageView) findViewById(R.id.imageViewPomidor));
+        for (int i=0;i<4;i++)
+        {
+            warzywa.get(i).getObrazek().setX(i*200+100);
+            warzywa.get(i).getObrazek().setY(300);
+
+
+        }
         warzywa.get(warzywo).getObrazek().setOnTouchListener(this);
         garnekx=garnek.getX();
         garneky=garnek.getY();
+         tura=0;
 
 
 
@@ -60,8 +69,43 @@ warzywa.remove(wa);
 if(warzywa.size()==0)
 
 {
-Log.d("Wygrales", "hehe");
-    moving=false;
+    if(tura==1)
+    {
+        Log.d("Wygrales", "hehe");
+        moving=false;
+    }
+
+    if(tura==0)
+    {
+        tura++;
+        for (int i=0;i<3;i++)
+        {
+            warzywa.add(new Pomidor());
+
+        }
+        warzywa.get(0).setObrazek((ImageView)findViewById(R.id.papryka_zupa));
+        warzywa.get(1).setObrazek((ImageView) findViewById(R.id.pietruszka_zupa));
+        warzywa.get(2).setObrazek((ImageView)findViewById(R.id.ziemniaki_zupa));
+
+for (Warzywa x:warzywa)
+    x.getObrazek().setVisibility(View.VISIBLE);
+
+        for (int i=0;i<3;i++) {
+
+
+            warzywa.get(i).getObrazek().setX(i * 300 + 100);
+            warzywa.get(i).getObrazek().setY(200);
+            warzywa.get(i).getObrazek().setMaxHeight(150);
+            warzywa.get(i).getObrazek().setMaxWidth(150);
+            Log.d("Dgddfg", "Cracovia");
+            warzywo= random.nextInt(warzywa.size());
+            Log.d("FDSSg", String.valueOf(warzywo));
+
+            warzywa.get(warzywo).getObrazek().setOnTouchListener(this);
+
+        }
+    }
+
 }
     else
 {
@@ -90,8 +134,6 @@ Log.d("Wygrales", "hehe");
                     y=motionEvent.getRawY()-warzywa.get(warzywo).getObrazek().getHeight();
                     warzywa.get(warzywo).getObrazek().setX(x);
                     warzywa.get(warzywo).getObrazek().setY(y);
-                    Log.d("SAGDSdf", String.valueOf(warzywa.get(warzywo).getObrazek().getX()));
-                    Log.d("SAGDsdfgdsgfdhSdf", String.valueOf(garnekx));
                     Zderzenie(warzywo);
 
                 }

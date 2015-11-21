@@ -10,6 +10,8 @@ public abstract class Warzywa {
 
 private ImageView obrazek;
 private int index;
+    int muzyka;
+
     public int getIndex() {
         return index;
     }

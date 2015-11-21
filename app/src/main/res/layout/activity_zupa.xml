@@ -15,9 +15,9 @@
         android:layout_marginBottom="50dp"
         android:minHeight="100dp"
         android:minWidth="150dp"
-        android:layout_alignBottom="@+id/imageViewPomidor"
-        android:layout_toRightOf="@+id/imageViewMarchewka"
-        android:layout_toEndOf="@+id/imageViewMarchewka" />
+
+
+ />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -26,9 +26,7 @@
         android:src="@mipmap/marchewka"
         android:minHeight="100dp"
         android:minWidth="120dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+ />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -37,9 +35,9 @@
         android:src="@mipmap/pomidor"
         android:minHeight="100dp"
         android:minWidth="150dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/imageViewGroszek"
-        android:layout_toEndOf="@+id/imageViewGroszek" />
+
+
+ />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -54,7 +52,37 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView_zupa_cebula"
         android:src="@mipmap/zupa_cebula"
-        android:layout_alignTop="@+id/imageViewGroszek"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+  />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/papryka_zupa"
+        android:visibility="gone"
+        android:src="@mipmap/papryka_zupa"
+        android:minHeight="100dp"
+        android:minWidth="120dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pietruszka_zupa"
+        android:visibility="gone"
+        android:src="@mipmap/pietruszka_zupa"
+        android:minHeight="100dp"
+        android:minWidth="120dp"
+        android:layout_below="@+id/imageView_zupa_cebula"
+ />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ziemniaki_zupa"
+        android:visibility="gone"
+        android:src="@mipmap/ziemniaki_zupa"
+        android:minHeight="100dp"
+        android:minWidth="120dp"
+        />
 </RelativeLayout>
