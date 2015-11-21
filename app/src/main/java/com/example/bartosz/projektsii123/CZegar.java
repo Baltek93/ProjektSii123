@@ -11,6 +11,15 @@ public class CZegar {
     private int minutaZapytana=1;
     private int checker = 0 ;
     private int iloscPrzejsc = 0;
+    private int dzwiekZegar = 0;
+
+    public int getDzwiekZegar() {
+        return dzwiekZegar;
+    }
+
+    public void setDzwiekZegar(int dzwiekZegar) {
+        this.dzwiekZegar = dzwiekZegar;
+    }
 
     public int getIloscPrzejsc() {
         return iloscPrzejsc;

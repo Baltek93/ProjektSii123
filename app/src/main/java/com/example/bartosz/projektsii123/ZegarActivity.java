@@ -1,8 +1,10 @@
 package com.example.bartosz.projektsii123;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TimePicker;
@@ -27,21 +29,18 @@ public class ZegarActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View arg0) {
-        int firstTime = 0;
-            if (firstTime == 0){
+            int firstTime = 0;
+            if (firstTime == 0) {
 
-                    getTimeFromPickers();
-                    checkTimeFromPickers();
-                    firstTime = 1 ;
-
-
+                getTimeFromPickers();
+                checkTimeFromPickers();
+                firstTime = 1;
 
 
             }
-            if (firstTime == 1)
-            {
+            if (firstTime == 1) {
                 if (cZegar.getChecker() == 1) {
-                    cZegar.setIloscPrzejsc(cZegar.getIloscPrzejsc()+1);
+                    cZegar.setIloscPrzejsc(cZegar.getIloscPrzejsc() + 1);
                     setTimeAsHeSays();
 
                 }
@@ -57,17 +56,12 @@ public class ZegarActivity extends AppCompatActivity {
             }
 
 
-
-
-
-
-            if (cZegar.getIloscPrzejsc() == 4)
-            {
+            if (cZegar.getIloscPrzejsc() == 4) {
                 cZegar.setIloscPrzejsc(0);
                 closeMe();
             }
         }
-            });
+    });
 
 
 
@@ -95,7 +89,7 @@ public class ZegarActivity extends AppCompatActivity {
     private void setTimeAsHeSays(){
         int[] hour  = {4 , 5  , 8 , 9 , 10 ,  16   ,  24 };
         int [] minutes = { 15 , 20 , 30 ,  45 , 55 } ;
-        int a = 0 ;
+        int a = 0;
         int b = 0 ;
         //
 
@@ -105,8 +99,51 @@ public class ZegarActivity extends AppCompatActivity {
             cZegar.setGodzinaZapytana(hour[a]);
             cZegar.setMinutaZapytana(minutes[b]);
 
-        Toast.makeText(ZegarActivity.this,
-                "Ustaw godzinę: "+cZegar.getGodzinaZapytana()+" i minutę: "+cZegar.getMinutaZapytana() +" ", Toast.LENGTH_LONG).show();  ////ADD SOUND HOOORAY, NOW SET...
+        /////////////////////////////////// DZWIEKI ODWTARZANIE
+        if ((a == 0) && (b == 1) ) {Muzyka.play(this, R.raw.godzina_czwarta_dwadziescia); cZegar.setDzwiekZegar(R.raw.godzina_czwarta_dwadziescia);}
+        if ((a == 0) && (b == 2) ) {Muzyka.play(this, R.raw.godzina_czwarta_trzydziesci); cZegar.setDzwiekZegar(R.raw.godzina_czwarta_trzydziesci);}
+        if ((a == 0) && (b == 0) ) {Muzyka.play(this, R.raw.godzina_czwarta_pietnascie); cZegar.setDzwiekZegar(R.raw.godzina_czwarta_pietnascie);}
+        if ((a == 0) && (b == 3) ) {Muzyka.play(this, R.raw.godzina_czwarta_czterdziesci_piec); cZegar.setDzwiekZegar(R.raw.godzina_czwarta_czterdziesci_piec);}
+        if ((a == 0) && (b == 4) ) {Muzyka.play(this, R.raw.godzina_czwarta_piecdziesiat_piec); cZegar.setDzwiekZegar(R.raw.godzina_czwarta_piecdziesiat_piec);}
+        if ((a == 1) && (b == 0) ) {Muzyka.play(this, R.raw.godzina_piata_pietnascie); cZegar.setDzwiekZegar(R.raw.godzina_piata_pietnascie);}
+        if ((a == 1) && (b == 1) ) {Muzyka.play(this, R.raw.godzina_piata_dwadziescia); cZegar.setDzwiekZegar(R.raw.godzina_piata_dwadziescia);}
+        if ((a == 1) && (b == 2) ) {Muzyka.play(this, R.raw.godzina_piata_trzydziesci); cZegar.setDzwiekZegar(R.raw.godzina_piata_trzydziesci);}
+        if ((a == 1) && (b == 3) ) {Muzyka.play(this, R.raw.godzina_piata_czterdziesci_piec); cZegar.setDzwiekZegar(R.raw.godzina_piata_czterdziesci_piec);}
+        if ((a == 1) && (b == 4) ) {Muzyka.play(this, R.raw.godzina_piata_piecdziesiat_piec); cZegar.setDzwiekZegar(R.raw.godzina_piata_piecdziesiat_piec);}
+        if ((a == 2) && (b == 0) ) {Muzyka.play(this, R.raw.godzina_osma_pietnascie); cZegar.setDzwiekZegar(R.raw.godzina_osma_pietnascie);}
+        if ((a == 2) && (b == 1) ) {Muzyka.play(this, R.raw.godzina_osma_dwadziescia); cZegar.setDzwiekZegar(R.raw.godzina_osma_dwadziescia);}
+        if ((a == 2) && (b == 2) ) {Muzyka.play(this, R.raw.godzina_osma_trzydziesci); cZegar.setDzwiekZegar(R.raw.godzina_osma_trzydziesci);}
+        if ((a == 2) && (b == 3) ) {Muzyka.play(this, R.raw.godzina_osma_czterdziesci_piec); cZegar.setDzwiekZegar(R.raw.godzina_osma_czterdziesci_piec);}
+        if ((a == 2) && (b == 4) ) {Muzyka.play(this, R.raw.godzina_osma_piecdziesiat_piec); cZegar.setDzwiekZegar(R.raw.godzina_osma_piecdziesiat_piec);}
+        if ((a == 3) && (b == 0) ) {Muzyka.play(this, R.raw.godzina_dziewiata_pietnascie); cZegar.setDzwiekZegar(R.raw.godzina_dziewiata_pietnascie);}
+        if ((a == 3) && (b == 1) ) {Muzyka.play(this, R.raw.godzina_dziewiata_dwadziescia); cZegar.setDzwiekZegar(R.raw.godzina_dziewiata_dwadziescia);}
+        if ((a == 3) && (b == 2) ) {Muzyka.play(this, R.raw.godzina_dziewiata_trzydziesci); cZegar.setDzwiekZegar(R.raw.godzina_dziewiata_trzydziesci);}
+        if ((a == 3) && (b == 3) ) {Muzyka.play(this, R.raw.godzina_dziewiata_czterdziesci_piec); cZegar.setDzwiekZegar(R.raw.godzina_dziewiata_czterdziesci_piec);}
+        if ((a == 3) && (b == 4) ) {Muzyka.play(this, R.raw.godzina_dziewiata_piecdziesiat_piec); cZegar.setDzwiekZegar(R.raw.godzina_dziewiata_piecdziesiat_piec);}
+        if ((a == 4) && (b == 0) ) {Muzyka.play(this, R.raw.godzina_dziesiata_piatnascie); cZegar.setDzwiekZegar(R.raw.godzina_dziesiata_piatnascie);}
+        if ((a == 4) && (b == 1) ) {Muzyka.play(this, R.raw.godzina_dziesiata_dwadziescia); cZegar.setDzwiekZegar(R.raw.godzina_dziesiata_dwadziescia);}
+        if ((a == 4) && (b == 2) ) {Muzyka.play(this, R.raw.godzina_dziesiata_trzydziesci); cZegar.setDzwiekZegar(R.raw.godzina_dziesiata_trzydziesci);}
+        if ((a == 4) && (b == 3) ) {Muzyka.play(this, R.raw.godzina_dziesiata_czterdziesci_piec); cZegar.setDzwiekZegar(R.raw.godzina_dziesiata_czterdziesci_piec);}
+        if ((a == 4) && (b == 4) ) {Muzyka.play(this, R.raw.godzina_dziesiata_piecdziesiat_piec); cZegar.setDzwiekZegar(R.raw.godzina_dziesiata_piecdziesiat_piec);}
+        if ((a == 5) && (b == 0) ) {Muzyka.play(this, R.raw.godzina_szesnasta_pietnascie); cZegar.setDzwiekZegar(R.raw.godzina_szesnasta_pietnascie);}
+        if ((a == 5) && (b == 1) ) {Muzyka.play(this, R.raw.godzina_szesnasta_dwadziescia); cZegar.setDzwiekZegar(R.raw.godzina_szesnasta_dwadziescia);}
+        if ((a == 5) && (b == 2) ) {Muzyka.play(this, R.raw.godzina_szesnasta_trzydziesci); cZegar.setDzwiekZegar(R.raw.godzina_szesnasta_trzydziesci);}
+        if ((a == 5) && (b == 3) ) {Muzyka.play(this, R.raw.godzina_szesnasta_czterdziesci_piec); cZegar.setDzwiekZegar(R.raw.godzina_szesnasta_czterdziesci_piec);}
+        if ((a == 5) && (b == 4) ) {Muzyka.play(this, R.raw.godzina_szesnasta_piecdziesiat_piec); cZegar.setDzwiekZegar(R.raw.godzina_szesnasta_piecdziesiat_piec);}
+        if ((a == 6) && (b == 0) ) {Muzyka.play(this, R.raw.godzina_dwudziesta_czwarta_pietnascie); cZegar.setDzwiekZegar(R.raw.godzina_dwudziesta_czwarta_pietnascie);}
+        if ((a == 6) && (b == 1) ) {Muzyka.play(this, R.raw.godzina_dwudziesta_czwarta_dwadziescia); cZegar.setDzwiekZegar(R.raw.godzina_dwudziesta_czwarta_dwadziescia);}
+        if ((a == 6) && (b == 2) ) {Muzyka.play(this, R.raw.godzina_dwudziesta_czwarta_trzydziesci); cZegar.setDzwiekZegar(R.raw.godzina_dwudziesta_czwarta_trzydziesci);}
+        if ((a == 6) && (b == 3) ) {Muzyka.play(this, R.raw.godzina_dwudziesta_czwarta_czterdziesci_piec); cZegar.setDzwiekZegar(R.raw.godzina_dwudziesta_czwarta_czterdziesci_piec);}
+        if ((a == 6) && (b == 4) ) {Muzyka.play(this, R.raw.godzina_dwudziesta_czwarta_piecdziesiat_piec); cZegar.setDzwiekZegar(R.raw.godzina_dwudziesta_czwarta_piecdziesiat_piec);}
+
+
+
+
+
+
+        ////////////////////////   KONIEC DZWIEKI ODWTARZANIE
+       /* Toast.makeText(ZegarActivity.this,
+                "Ustaw godzinę: "+cZegar.getGodzinaZapytana()+" i minutę: "+cZegar.getMinutaZapytana() +" ", Toast.LENGTH_LONG).show();*/  ////ADD SOUND HOOORAY, NOW SET...
     }
 
     private void checkTimeFromPickers () {
@@ -120,7 +157,17 @@ public class ZegarActivity extends AppCompatActivity {
             cZegar.setChecker(1);
         } ////ADD SOUND HOOORAY, NOW SET...
         else {
-            Toast.makeText(ZegarActivity.this,"BOOOO", Toast.LENGTH_LONG).show();
+            Muzyka.play(this, R.raw.blad);
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    Muzyka.play(getApplicationContext(), cZegar.getDzwiekZegar());
+                }
+            }, 2000);
+
+
+
+
             cZegar.setChecker(0);
         }
     }
