@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/ziemniaki_zupa"
         android:visibility="gone"
-        android:src="@mipmap/ziemniaki_zupa"
+        android:src="@mipmap/ziemniak_zupa"
         android:minHeight="100dp"
         android:minWidth="120dp"
         />

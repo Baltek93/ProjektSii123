@@ -6,9 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 
 public class MainActivity extends Activity {
+ImageView smok;
+    Animation animation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,8 +21,10 @@ public class MainActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-
-        //Muzyka.play(this, R.raw.intro);
+        smok=(ImageView)findViewById(R.id.ivPomocnik);
+        animation= AnimationUtils.loadAnimation(this,R.anim.animate);
+        smok.startAnimation(animation);
+//        Muzyka.play(this, R.raw.intro);
     }
 
 
