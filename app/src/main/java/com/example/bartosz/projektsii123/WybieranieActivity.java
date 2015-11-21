@@ -101,8 +101,6 @@ public class WybieranieActivity extends AppCompatActivity {
 
         //koniec gry, sukces
         if (wynik == 10) {
-            Toast toast = Toast.makeText(getApplicationContext(),successMessage,Toast.LENGTH_LONG);
-            toast.show();
 
             //kod powrotu do głównej aktywności
             //jest opóźnienie 2s
