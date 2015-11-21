@@ -24,7 +24,7 @@ ImageView smok;
         smok=(ImageView)findViewById(R.id.ivPomocnik);
         animation= AnimationUtils.loadAnimation(this,R.anim.animate);
         smok.startAnimation(animation);
-//        Muzyka.play(this, R.raw.intro);
+
     }
 
 
