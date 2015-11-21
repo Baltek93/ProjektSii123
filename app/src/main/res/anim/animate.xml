@@ -11,3 +11,15 @@
     android:repeatCount="infinite"
     android:interpolator="@android:anim/linear_interpolator"
     />
+<rotate
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:fromDegrees="30"
+android:toDegrees="0"
+android:pivotX="50%"
+android:pivotY="50%"
+android:duration="2000"
+android:fillAfter="false"
+android:startOffset="0"
+android:repeatCount="infinite"
+android:interpolator="@android:anim/linear_interpolator"
+    />
