@@ -1,19 +1,31 @@
 package com.example.bartosz.projektsii123;
 
+import android.view.View;
 import android.widget.ImageView;
 
 /**
  * Created by Bartosz on 20.11.2015.
  */
 public abstract class Warzywa {
-    public abstract  void rusz();
-    private ImageView obraz;
 
-    public ImageView getObraz() {
-        return obraz;
+private ImageView obrazek;
+private int index;
+    float x, y = 0.0f;
+    boolean moving = false;
+    int warzywo;
+    public int getIndex() {
+        return index;
     }
 
-    public void setObraz(ImageView obraz) {
-        this.obraz = obraz;
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
+    public ImageView getObrazek() {
+        return obrazek;
+    }
+
+    public void setObrazek(ImageView obrazek) {
+        this.obrazek = obrazek;
     }
 }
