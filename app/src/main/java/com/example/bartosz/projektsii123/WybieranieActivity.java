@@ -53,12 +53,12 @@ public class WybieranieActivity extends AppCompatActivity {
         img3 = (ImageView)findViewById(R.id.wybImg3);
 
         //zmienna typu TextView
-        tv = (TextView)findViewById(R.id.textView);
+        //tv = (TextView)findViewById(R.id.textView);
 
         wynik = 0;
 
         losujKat();
-        ustawWynik();
+       // ustawWynik();
     }
 
     //losowanie zestawu obrazków
@@ -70,10 +70,10 @@ public class WybieranieActivity extends AppCompatActivity {
         przypiszObrazek();
     }
 
-    //ustawianie wyniku od wyświetlenia w TextView
+    /*//ustawianie wyniku od wyświetlenia w TextView
     private void ustawWynik() {
         tv.setText("Brakuje Ci jeszcze " + (10-wynik) + " punktów do zaliczenia poziomu.");
-    }
+    }*/
 
     //sprawdzanie, czy wybrany obrazek jest dobry
     public void czyDobraOdp(View v) {
@@ -96,7 +96,7 @@ public class WybieranieActivity extends AppCompatActivity {
         if(ktoryWlasciwy[currNum] == wybImg){
             losujKat();
             wynik++;
-            ustawWynik();
+           // ustawWynik();
         }
 
         //koniec gry, sukces

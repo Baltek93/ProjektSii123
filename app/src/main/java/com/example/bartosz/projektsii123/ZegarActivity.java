@@ -153,7 +153,7 @@ public class ZegarActivity extends AppCompatActivity {
         int minutesAsked = cZegar.getMinutaZapytana();
         if ( hour == hourAsked && minutes == minutesAsked)
         {
-            Toast.makeText(ZegarActivity.this,"YAAAAY", Toast.LENGTH_LONG).show();
+
             cZegar.setChecker(1);
         } ////ADD SOUND HOOORAY, NOW SET...
         else {
