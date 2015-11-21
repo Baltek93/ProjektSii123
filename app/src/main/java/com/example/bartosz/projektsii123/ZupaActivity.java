@@ -1,6 +1,7 @@
 package com.example.bartosz.projektsii123;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,10 +23,13 @@ public class ZupaActivity extends Activity implements View.OnTouchListener {
     float x, y ;
     boolean moving;
     int warzywo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zupa);
+        Muzyka.play(this, R.raw.zupa_intro);
+
         moving = false;
         x=y=0.0f;
         warzywa = new ArrayList<Warzywa>();
@@ -34,12 +38,16 @@ public class ZupaActivity extends Activity implements View.OnTouchListener {
         warzywa.add( new Marchewka());
         warzywa.add( new Pomidor());
         random = new Random();
-        warzywo= random.nextInt(warzywa.size());
+        warzywo= 3;
 garnek= (ImageView)findViewById(R.id.imageView_zupa_garnek);
         warzywa.get(0).setObrazek((ImageView) findViewById(R.id.imageViewGroszek));
+        warzywa.get(0).muzyka=R.raw.zupa_gorszek;
         warzywa.get(1).setObrazek((ImageView) findViewById(R.id.imageView_zupa_cebula));
+        warzywa.get(1).muzyka=R.raw.zupa_cebula;
         warzywa.get(2).setObrazek((ImageView) findViewById(R.id.imageViewMarchewka));
+        warzywa.get(2).muzyka=R.raw.zupa_marchewka;
         warzywa.get(3).setObrazek((ImageView) findViewById(R.id.imageViewPomidor));
+        warzywa.get(3).muzyka=R.raw.zupa_pomidor;
         for (int i=0;i<4;i++)
         {
             warzywa.get(i).getObrazek().setX(i*200+100);
@@ -71,7 +79,7 @@ if(warzywa.size()==0)
 {
     if(tura==1)
     {
-        Log.d("Wygrales", "hehe");
+        startActivity(new Intent(this,MainActivity.class));
         moving=false;
     }
 
@@ -84,8 +92,11 @@ if(warzywa.size()==0)
 
         }
         warzywa.get(0).setObrazek((ImageView)findViewById(R.id.papryka_zupa));
+        warzywa.get(0).muzyka=R.raw.zupa_papryka;
         warzywa.get(1).setObrazek((ImageView) findViewById(R.id.pietruszka_zupa));
-        warzywa.get(2).setObrazek((ImageView)findViewById(R.id.ziemniaki_zupa));
+        warzywa.get(1).muzyka=R.raw.zupa_pietruszka;
+        warzywa.get(2).setObrazek((ImageView) findViewById(R.id.ziemniaki_zupa));
+        warzywa.get(2).muzyka=R.raw.zupa_ziemniak;
 
 for (Warzywa x:warzywa)
     x.getObrazek().setVisibility(View.VISIBLE);
@@ -113,6 +124,7 @@ for (Warzywa x:warzywa)
     Log.d("FDSSg", String.valueOf(warzywo));
 
     warzywa.get(warzywo).getObrazek().setOnTouchListener(this);
+    Muzyka.play(this, warzywa.get(warzywo).muzyka);
     moving=false;
 }
 
@@ -121,9 +133,24 @@ for (Warzywa x:warzywa)
 
     }
 }
+    @Override
+    public  void onPause()
+    {
+        super.onPause();
+        Muzyka.stop(this);
+    }
 
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
+//        if(warunek){
+//        try {
+//            Thread.sleep(4000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        Muzyka.play(this, warzywa.get(warzywo).muzyka);
+//        warunek = false;
+//        }
         switch (motionEvent.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 moving = true;
