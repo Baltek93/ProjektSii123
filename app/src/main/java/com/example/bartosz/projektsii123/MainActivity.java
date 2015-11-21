@@ -14,16 +14,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         Muzyka.play(this, R.raw.intro);
-
-
-
-        }
+    }
 
 
     @Override
@@ -45,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
     public void GraZegar(View v)
     {
         Intent intent = new Intent(this, ZegarActivity.class);
+        startActivity(intent);
+
+
+    }
+
+    public void GraWybieranie(View v)
+    {
+        Intent intent = new Intent(this, WybieranieActivity.class);
         startActivity(intent);
 
 

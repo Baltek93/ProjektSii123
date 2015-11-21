@@ -56,7 +56,8 @@
         android:layout_alignLeft="@+id/ivTloMain"
         android:scaleType="fitXY"
         android:maxHeight="40dp"
-        android:maxWidth="100dp" />
+        android:maxWidth="100dp"
+        android:onClick="GraWybieranie"/>
 
     <ImageButton
         android:layout_width="50dp"
