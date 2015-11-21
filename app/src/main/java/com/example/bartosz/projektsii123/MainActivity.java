@@ -14,12 +14,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MediaPlayer mp = MediaPlayer.create(this, R.raw.super_dzwonek_intro);
-        mp.start();
-        mp.setLooping(false);
+     Muzyka.play(this, R.raw.super_dzwonek_intro);
+
 
 
         }
+
+
+    @Override
+    public  void onPause()
+    {
+   super.onPause();
+        Muzyka.stop(this);
+    }
+
+
     public void GraGarnki(View v)
     {
         Intent intent = new Intent(this, ZupaActivity.class);
