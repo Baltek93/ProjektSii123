@@ -2,16 +2,18 @@ package com.example.bartosz.projektsii123;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
-import java.lang.reflect.Array;
+
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -24,6 +26,11 @@ public class ZupaActivity extends Activity implements View.OnTouchListener {
     float x, y ;
     boolean moving;
     int warzywo;
+    DisplayMetrics displaymetrics ;
+
+    int height ;
+    int width ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +39,10 @@ public class ZupaActivity extends Activity implements View.OnTouchListener {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_zupa);
         Muzyka.play(this, R.raw.zupa_intro);
-
+        displaymetrics= new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        width= displaymetrics.widthPixels;
+        height= displaymetrics.heightPixels;
         moving = false;
         x=y=0.0f;
         warzywa = new ArrayList<Warzywa>();
@@ -53,8 +63,8 @@ garnek= (ImageView)findViewById(R.id.imageView_zupa_garnek);
         warzywa.get(3).muzyka=R.raw.zupa_pomidor;
         for (int i=0;i<4;i++)
         {
-            warzywa.get(i).getObrazek().setX(i*200+100);
-            warzywa.get(i).getObrazek().setY(300);
+            warzywa.get(i).getObrazek().setX(i*height/4+100);
+            warzywa.get(i).getObrazek().setY(width/4);
 
 
         }
@@ -77,6 +87,7 @@ private void Zderzenie(int wa)
 
         warzywa.get(wa).getObrazek().setVisibility(View.GONE);
 warzywa.remove(wa);
+        moving=false;
 if(warzywa.size()==0)
 
 {
@@ -107,8 +118,8 @@ for (Warzywa x:warzywa)
         for (int i=0;i<3;i++) {
 
 
-            warzywa.get(i).getObrazek().setX(i * 300 + 100);
-            warzywa.get(i).getObrazek().setY(200);
+            warzywa.get(i).getObrazek().setX(i * height/4 + 100);
+            warzywa.get(i).getObrazek().setY(width/4);
             warzywa.get(i).getObrazek().setMaxHeight(150);
             warzywa.get(i).getObrazek().setMaxWidth(150);
             Log.d("Dgddfg", "Cracovia");
