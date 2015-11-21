@@ -41,7 +41,7 @@ public class ZupaActivity extends Activity implements View.OnTouchListener {
         warzywo= 3;
 garnek= (ImageView)findViewById(R.id.imageView_zupa_garnek);
         warzywa.get(0).setObrazek((ImageView) findViewById(R.id.imageViewGroszek));
-        warzywa.get(0).muzyka=R.raw.zupa_gorszek;
+        warzywa.get(0).muzyka=R.raw.zupa_groszek;
         warzywa.get(1).setObrazek((ImageView) findViewById(R.id.imageView_zupa_cebula));
         warzywa.get(1).muzyka=R.raw.zupa_cebula;
         warzywa.get(2).setObrazek((ImageView) findViewById(R.id.imageViewMarchewka));
