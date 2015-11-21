@@ -13,6 +13,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends Activity {
 ImageView smok;
+
     Animation animation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

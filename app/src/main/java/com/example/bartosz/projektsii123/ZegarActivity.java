@@ -47,6 +47,12 @@ public class ZegarActivity extends Activity {
 
         @Override
         public void onClick(View arg0) {
+            if (cZegar.getIloscPrzejsc() == 3) {
+
+                cZegar.setIloscPrzejsc(0);
+                closeMe();
+
+            }
             int firstTime = 0;
             if (firstTime == 0) {
 
@@ -65,6 +71,7 @@ public class ZegarActivity extends Activity {
 
 
                 if (cZegar.getChecker() == 0) {
+
                     getTimeFromPickers();
                     checkTimeFromPickers();
 
@@ -74,10 +81,7 @@ public class ZegarActivity extends Activity {
             }
 
 
-            if (cZegar.getIloscPrzejsc() == 4) {
-                cZegar.setIloscPrzejsc(0);
-                closeMe();
-            }
+
         }
     });
 
@@ -105,7 +109,7 @@ public class ZegarActivity extends Activity {
     }
 
     private void setTimeAsHeSays(){
-        int[] hour  = {4 , 5  , 8 , 9 , 10 ,  16   ,  24 };
+        int[] hour  = {4 , 5  , 8 , 9 , 10 ,  16   ,  0 };
         int [] minutes = { 15 , 20 , 30 ,  45 , 55 } ;
         int a = 0;
         int b = 0 ;
@@ -193,9 +197,17 @@ public class ZegarActivity extends Activity {
         cZegar.getChecker();
 
     }
+
     private void closeMe(){
+        Muzyka.stop(this);
         Intent intent = new Intent(ZegarActivity.this, MainActivity.class);
         startActivity(intent);
+
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Muzyka.stop(this);
+    }
 }
