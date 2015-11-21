@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-     Muzyka.play(this, R.raw.super_dzwonek_intro);
+     Muzyka.play(this, R.raw.intro);
 
 
 
