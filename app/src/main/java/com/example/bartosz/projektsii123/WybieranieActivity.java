@@ -1,10 +1,12 @@
 package com.example.bartosz.projektsii123;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,7 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class WybieranieActivity extends AppCompatActivity {
+public class WybieranieActivity extends Activity {
     private int currNum, currLosNum, wybImg, wynik;
 
     //tablica poprawnych odpowiedzi dla poszczególnych plansz
@@ -45,6 +47,8 @@ public class WybieranieActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_wybieranie);
         Muzyka.play(this, R.raw.wybieranie_intro);
         //zmienne typu ImageView
