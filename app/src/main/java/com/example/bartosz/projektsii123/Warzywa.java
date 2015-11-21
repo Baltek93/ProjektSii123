@@ -10,9 +10,6 @@ public abstract class Warzywa {
 
 private ImageView obrazek;
 private int index;
-    float x, y = 0.0f;
-    boolean moving = false;
-    int warzywo;
     public int getIndex() {
         return index;
     }

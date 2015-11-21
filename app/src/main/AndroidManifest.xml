@@ -31,10 +31,6 @@
             android:name=".PorzadekActivity"
             android:screenOrientation="landscape" >
         </activity>
-        <activity
-            android:name=".ruszaniebuttonem"
-            android:screenOrientation="landscape" >
-        </activity>
     </application>
 
 </manifest>
