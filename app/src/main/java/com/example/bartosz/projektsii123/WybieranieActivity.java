@@ -51,6 +51,7 @@ public class WybieranieActivity extends Activity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_wybieranie);
         Muzyka.play(this, R.raw.wybieranie_intro);
+        // głupi komentarz
         //zmienne typu ImageView
         img1 = (ImageView)findViewById(R.id.wybImg1);
         img2 = (ImageView)findViewById(R.id.wybImg2);
