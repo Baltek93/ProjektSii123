@@ -16,7 +16,9 @@ import java.util.Random;
 
 public class ZegarActivity extends Activity {
     CZegar cZegar = new CZegar();
+
     TimePicker tp;
+
     ImageButton imageButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +26,8 @@ public class ZegarActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_zegar);
-
+        TimePicker tpHourMin = (TimePicker) findViewById(R.id.tpZegar);
+        tpHourMin.setIs24HourView(true);
             setTimeAsHeSays();
 
             imageButton = (ImageButton) findViewById(R.id.ibPomocnikZegar);
