@@ -46,7 +46,7 @@ public class WybieranieActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wybieranie);
-
+        Muzyka.play(this, R.raw.wybieranie_intro);
         //zmienne typu ImageView
         img1 = (ImageView)findViewById(R.id.wybImg1);
         img2 = (ImageView)findViewById(R.id.wybImg2);
@@ -116,4 +116,11 @@ public class WybieranieActivity extends AppCompatActivity {
         img2.setImageResource(obrazki[currNum][(1+currLosNum)%3]);
         img3.setImageResource(obrazki[currNum][(2+currLosNum)%3]);
     }
+
+    public  void onPause()
+    {
+        super.onPause();
+        Muzyka.stop(this);
+    }
+
 }
